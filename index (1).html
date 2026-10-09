@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ASINEA | Café sin disfraz</title>
+<meta name="description" content="ASINEA: café colombiano en grano, molido y empacado en bolsa. Café sin disfraz.">
+<meta name="theme-color" content="#0A0908">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Archivo:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- INTRO -->
+<div id="intro" role="dialog" aria-label="Entrada a ASINEA">
+  <canvas id="introBeans" aria-hidden="true"></canvas>
+  <div class="intro-core">
+    <div class="intro-meta mono"><span>LOTE 001 / TOSTIÓN EN CURSO</span><span>COLOMBIA</span><span id="introPct">100%</span></div>
+    <div id="introLogo" aria-label="ASINEA">ASINEA</div>
+    <p class="intro-tag" id="introTag">CAFÉ PARA LOS QUE NO PIDEN PERMISO.</p>
+    <div class="intro-btns">
+      <button class="sticker" id="enter" type="button">ENTRAR</button>
+      <button class="sticker alt" id="enterSound" type="button">ENTRAR CON SONIDO</button>
+    </div>
+    <p class="mono intro-hint">Toca la pantalla para saltar la animación</p>
+  </div>
+  <div class="intro-bar" id="introBar" style="width:100%"></div>
+</div>
+
+<!-- NAV -->
+<nav id="nav" aria-label="Principal">
+  <a class="nav-logo" href="#hero" data-go="#hero">ASINEA</a>
+  <div class="nav-r">
+    <button class="tagbtn hide-s" id="snd" type="button" aria-pressed="false">SONIDO: OFF</button>
+    <button class="tagbtn" id="cartBtn" type="button">TU BOLSA (<span id="cartCount">0</span>)</button>
+    <button class="tagbtn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu">MENÚ</button>
+  </div>
+</nav>
+<div id="menu" aria-label="Menú">
+  <button class="tagbtn menu-x" id="menuX" type="button">CERRAR ✕</button>
+  <div class="menu-in">
+    <a href="#hero" data-go="#hero">ASINEA <small>INICIO</small></a>
+    <a href="#labanda" data-go="#labanda">LA BANDA <small>MANIFIESTO</small></a>
+    <a href="#cafes" data-go="#cafes">LOS CAFÉS <small>6 BOLSAS</small></a>
+    <a href="#proceso" data-go="#proceso">CÓMO SE HACE <small>5 PASOS</small></a>
+    <button type="button" id="menuCart">TU BOLSA <small>CARRITO</small></button>
+    <a href="#contacto" data-go="#contacto">CONTACTO <small>REDES</small></a>
+    <button type="button" id="sndM" class="hide-l"><span id="sndMTxt">SONIDO: OFF</span> <small>ON / OFF</small></button>
+  </div>
+</div>
+
+<main>
+<!-- HERO -->
+<header id="hero" class="hero">
+  <div class="hero-top mono"><span>CAFÉ EN GRANO / MOLIDO / BOLSA</span><span>COLOMBIA · 2026</span></div>
+  <h1 class="hero-logo" id="heroLogo" aria-label="ASINEA"><span style="--i:0">A</span><span style="--i:1">S</span><span style="--i:2">I</span><span style="--i:3">N</span><span style="--i:4">E</span><span style="--i:5">A</span></h1>
+  <p class="hero-sub" id="heroSub">CAFÉ <em>SIN</em> DISFRAZ.</p>
+  <a class="hero-cta tagbtn" href="#cafes" data-go="#cafes">VER LAS BOLSAS ↓</a>
+  <div class="hero-bagwrap b2"><div class="bag3d" id="heroBag2"></div></div>
+  <div class="hero-bagwrap"><div class="bag3d" id="heroBag"></div></div>
+  <div class="hero-stamp"><b>SELLADA</b>BOLSA DE CAFÉ. NO DE TAZA.</div>
+</header>
+<div class="marquee" aria-hidden="true"><div class="mq-track" id="mq1"></div></div>
+<div class="marquee m2" aria-hidden="true"><div class="mq-track" id="mq2"></div></div>
+
+<!-- MANIFIESTO -->
+<section id="manifiesto" class="pin" style="--n:7" aria-label="Manifiesto">
+  <div class="pin-in manif" id="manif">
+    <div class="manif-lines skewv" id="manifLines">
+      <p class="ml long on">NO NACIMOS PARA HACER OTRO <b>CAFÉ.</b></p>
+      <p class="ml long">NACIMOS PARA HACERLO A <b>NUESTRA</b> MANERA.</p>
+      <p class="ml">SIN <b>POSAR.</b></p>
+      <p class="ml">SIN <b>DISFRAZARLO.</b></p>
+      <p class="ml long">SIN PONERLE <b>MOÑOS.</b></p>
+      <p class="ml"><b>CAFÉ.</b></p>
+      <p class="ml">Y <b>YA.</b></p>
+    </div>
+    <div class="manif-count mono"><span id="mfi">1</span> / 7</div>
+    <div class="manif-bar"></div>
+  </div>
+</section>
+
+<!-- NO SOMOS -->
+<section id="labanda" class="nosomos">
+  <p class="mono ns-eyebrow">LA BANDA DE ASINEA / DECLARACIÓN</p>
+  <h2 class="ns-h skewv">NO SOMOS</h2>
+  <ul class="ns-list" id="nsList">
+    <li><small class="mono">No somos</small><span>CAFETERÍA.</span></li>
+    <li><small class="mono">No somos</small><span>UNA TAZA BONITA.</span></li>
+    <li><small class="mono">No somos</small><span>DECORACIÓN.</span></li>
+    <li><small class="mono">No somos</small><span>CAFÉ DE OFICINA.</span></li>
+    <li><small class="mono">No somos</small><span>OTRA MARCA BEIGE.</span></li>
+  </ul>
+  <div class="ns-final" id="nsFinal">
+    <span class="mono ns-stick">LOTE 001 · SIN MOÑOS</span>
+    <h3>SOMOS ASINEA.</h3>
+    <div class="barcode" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- LOS CAFÉS -->
+<section id="cafes" class="wallsec">
+  <div class="wall-head">
+    <p class="mono">LA BANDA DE ASINEA / 6 BOLSAS</p>
+    <h2 class="skewv">LOS <em>PROBLE&shy;MÁTICOS</em></h2>
+    <div class="wall-meta">
+      <p class="mono">ELIGE UNA BOLSA · EN GRANO O MOLIDO · 250 G, 500 G, 1 KG</p>
+      <div class="wall-ctl"><button type="button" id="wPrev" aria-label="Anterior">←</button><button type="button" id="wNext" aria-label="Siguiente">→</button></div>
+    </div>
+  </div>
+  <div class="wall" id="wall" role="list"></div>
+  <p class="mono wall-hint">ARRASTRA O DESLIZA →</p>
+</section>
+
+<!-- EN GRANO -->
+<section id="grano" class="pin" style="--n:3" aria-label="Café en grano">
+  <div class="pin-in grano">
+    <p class="mono sec-top">PRESENTACIÓN A / GRANO ENTERO</p>
+    <div class="g-bg" aria-hidden="true">EN GRANO</div>
+    <div class="g-bean" id="gBean">
+      <svg viewBox="0 0 400 260" aria-label="Grano de café abriéndose" role="img">
+        <defs>
+          <radialGradient id="bg1" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#A66B3C"/><stop offset=".6" stop-color="#6B3F22"/><stop offset="1" stop-color="#2E1809"/></radialGradient>
+          <clipPath id="gTop"><path d="M-20,130 L14,130 C110,70 290,190 386,130 L420,130 L420,-20 L-20,-20 Z"/></clipPath>
+          <clipPath id="gBot"><path d="M-20,130 L14,130 C110,70 290,190 386,130 L420,130 L420,300 L-20,300 Z"/></clipPath>
+        </defs>
+        <rect x="14" y="118" width="372" height="24" fill="#120a05" id="gGap" opacity="0"/>
+        <g id="gHalfT" clip-path="url(#gTop)"><ellipse cx="200" cy="130" rx="190" ry="120" fill="url(#bg1)"/></g>
+        <g id="gHalfB" clip-path="url(#gBot)"><ellipse cx="200" cy="130" rx="190" ry="120" fill="url(#bg1)"/></g>
+        <path id="gCreaseT" d="M14,130 C110,70 290,190 386,130" fill="none" stroke="#1a0d06" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <div class="g-call c1" id="gc1"><b>ENTERO</b>El aroma se queda adentro hasta que lo muelas.</div>
+      <div class="g-call c2" id="gc2"><b>TOSTADO</b>De verde a oscuro, con el punto que pide cada café.</div>
+      <div class="g-call c3" id="gc3"><b>TUYO</b>Lo muelas como lo muelas, tú mandas.</div>
+    </div>
+    <div class="sec-copy"><h2>EN<br>GRANO</h2><p>PARA QUE EL CAFÉ LLEGUE COMO DEBE.</p></div>
+  </div>
+</section>
+
+<!-- MOLIDO -->
+<section id="molido" class="pin" style="--n:3" aria-label="Café molido">
+  <div class="pin-in molido">
+    <canvas id="molCanvas" aria-hidden="true"></canvas>
+    <p class="mono sec-top">PRESENTACIÓN B / MOLIENDA</p>
+    <div class="sec-copy"><h2>MOLIDO</h2><p class="mol-sub" id="molSub">LISTO PARA QUE LO HAGAS A TU MANERA.</p></div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso" class="pin" style="--n:5" aria-label="Cómo se hace">
+  <div class="pin-in proc">
+    <div class="pr-text">
+      <div class="pr-t on"><div class="pr-step mono"><span>PASO 01 / 05</span><i></i></div><h3>SELECCIONAMOS</h3><p>Granos verdes sobre la mesa. Los que no dan la talla se van antes de tocar el fuego.</p></div>
+      <div class="pr-t"><div class="pr-step mono"><span>PASO 02 / 05</span><i></i></div><h3>TOSTAMOS</h3><p>Calor, tiempo y oído. El grano pasa de verde a oscuro y agarra su personalidad.</p></div>
+      <div class="pr-t"><div class="pr-step mono"><span>PASO 03 / 05</span><i></i></div><h3>MOLEMOS</h3><p>Si lo pides molido, el grano se hace polvo a la medida de tu cafetera.</p></div>
+      <div class="pr-t"><div class="pr-step mono"><span>PASO 04 / 05</span><i></i></div><h3>EMPACAMOS</h3><p>La bolsa se llena, se sella y se marca con su nombre.</p></div>
+      <div class="pr-t"><div class="pr-step mono"><span>PASO 05 / 05</span><i></i></div><h3>TE LA MANDAMOS</h3><p>Sale de la bodega y viaja hasta tu puerta.</p></div>
+      <div class="pr-dots" id="prDots"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+    </div>
+    <div class="pr-stage" id="prStage">
+      <canvas id="prCanvas" aria-hidden="true"></canvas>
+      <p class="mono pr-label" id="prLabel">ASÍ SE ARMA ESTA VAINA</p>
+      <div class="pr-bag" id="prBag"><div class="ghost"></div><div class="real"></div></div>
+      <div class="pr-route mono" id="prRoute"><span>BODEGA</span><span>TU CASA</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MAPA -->
+<section id="origen" class="mapsec" aria-label="Mapa de origen">
+  <h2 class="skewv rv">DE DÓNDE VIENE <em>ESTA VAINA</em></h2>
+  <div class="map-grid">
+    <div class="map-box" id="mapBox">
+      <svg id="mapSvg" viewBox="-4 -4 108 138" role="img" aria-label="Mapa de Colombia con regiones cafeteras">
+        <g class="map-grat" id="mapGrat"></g>
+        <path class="map-outline" id="mapOutline" pathLength="1"/>
+        <g id="mapPins"></g>
+      </svg>
+    </div>
+    <div class="map-info" id="mapInfo"></div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer id="contacto" class="foot">
+  <p class="foot-line">NOS VEMOS EN LA PRÓXIMA BOLSA.</p>
+  <div class="foot-logo skewv" aria-hidden="true">ASINEA</div>
+  <div class="foot-grid">
+    <div><h3 class="mono">SIGUE LA BANDA</h3>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://wa.me/573044590274" target="_blank" rel="noopener">WhatsApp</a></div>
+    <div><h3 class="mono">CONTACTO</h3><p>Pedidos, mayoristas y dudas. Escríbenos por WhatsApp o Instagram.</p></div>
+    <div><h3 class="mono">LEGAL</h3>
+      <a href="#contacto">Políticas de privacidad</a>
+      <a href="#contacto">Términos y condiciones</a>
+      <a href="#contacto">Envíos y devoluciones</a></div>
+  </div>
+  <div class="mono foot-bot"><span>© 2026 ASINEA · CAFÉ SIN DISFRAZ.</span><span>HECHO EN COLOMBIA</span></div>
+</footer>
+
+<!-- PRODUCT -->
+<aside id="product" role="dialog" aria-modal="true" aria-label="Detalle de la bolsa" hidden></aside>
+
+<!-- CART -->
+<aside id="cart" aria-label="Tu banda" hidden>
+  <div class="c-scrim" id="cScrim"></div>
+  <div class="c-panel">
+    <header class="c-head"><h2>TU BANDA</h2><button class="tagbtn" id="cClose" type="button">CERRAR ✕</button></header>
+    <div class="c-body" id="cBody"></div>
+    <footer class="c-foot" id="cFoot"></footer>
+  </div>
+</aside>
+
+<!-- STAGE -->
+<div id="stage" aria-hidden="true" hidden>
+  <canvas id="stBeans"></canvas>
+  <div class="st-scene" id="stScene">
+    <div class="st-belt" id="stBelt"></div>
+    <div class="st-box" id="stBox"><div class="bx-art">ASINEA</div><i class="bx-flap l"></i><i class="bx-flap r"></i><i class="bx-tape"></i></div>
+    <div class="st-bagwrap" id="stBagWrap">
+      <div class="st-bag" id="stBag"><div class="ghost"></div><div class="real"></div><div class="st-tape">SELLADO · ASINEA · SELLADO · ASINEA</div><div class="st-label" id="stLabel"></div></div>
+      <div class="st-sealer" id="stSealer"></div>
+    </div>
+  </div>
+  <div class="st-title" id="stTitle"></div>
+  <button class="st-skip mono" id="stSkip" type="button">SALTAR →</button>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="js/main.js"></script>
+</body>
+</html>
